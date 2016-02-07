@@ -4,9 +4,9 @@ import About from "./components/About";
 import Cats from "./components/Cats";
 import { Router, Route, Link, IndexRoute } from 'react-router'
 import App from "./App"
-export default class Routes extends React.Component<any,any>{
+export default class Routes extends React.Component{
 
-    public render(){
+     render(){
         return (
             <Router {...this.props}>
                 <Route path="/" component={App}>

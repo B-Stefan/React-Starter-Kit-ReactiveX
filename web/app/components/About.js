@@ -2,14 +2,14 @@
 import * as React from "react"
 
 
-export default class About extends React.Component<any,any> {
+export default class About extends React.Component {
 
-    constructor(props,context){
-        super(props,context);
+    constructor(props, context) {
+        super(props, context);
         console.log("Here I'm the About-Page")
     }
 
-    public render(){
+    render() {
         return (
             <span>Here is my about page</span>
         )

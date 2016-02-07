@@ -27,22 +27,21 @@ Other npm commands are:
 ## Used technologies
 
 * React@0.14
-* Typescript@1.6
 * Gulp
 * Bable / ES6
 
 ![Image](/docs/RequestResponseDiagram.png?raw=true)
 
 
-## Example React component in Typescript with JSX support 
+## Example React Component
 
 
-```typescript
+```ES6
 
   import * as React from "react"
 
 
-  export default class About extends React.Component<any,any> {
+  export default class About extends React.Component {
 
       constructor(props,context){
           super(props,context);

@@ -6,7 +6,6 @@ import webpack from "webpack"
 
 gulp.task("bundle",(callback)=>{
 
-    console.log( __dirname  + "/../web-tmp/app/Bootstrap")
     webpack({
         context: __dirname + "/../web-tmp/app",
         entry: __dirname  + "/../web-tmp/app/Bootstrap",
@@ -15,7 +14,6 @@ gulp.task("bundle",(callback)=>{
             filename: "bundle.js"
         }
     }).run((err)=>{
-        console.log("YEEEAH", err)
         callback()
     });
 
