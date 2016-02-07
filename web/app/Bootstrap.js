@@ -1,5 +1,3 @@
-/// <reference path="./../../typings/tsd.d.ts" />
-/// <reference path="./../../typings-custom/tsd-custom.d.ts" />
 import Routes from "./Routes"
 import * as React from "react"
 import * as ReactDom  from "react-dom"

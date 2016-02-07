@@ -1,5 +1,3 @@
-/// <reference path="./../../typings/tsd.d.ts" />
-
 import {Server} from "./Server";
 import Utils from "./utils/Utils"
 export default class Main {
