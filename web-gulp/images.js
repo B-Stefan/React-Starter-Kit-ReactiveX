@@ -1,5 +1,5 @@
 import gulp from "gulp"
-import config from "./../config"
+import {paths} from "./../config"
 import filter from "gulp-filter"
 import size from "gulp-size"
 import imagemin from "gulp-imagemin"
@@ -9,9 +9,9 @@ gulp.task("images",()=>{
 
     let filterImgs = filter('**/*{png,jpg}',{restore: true});
 
-    console.log(config.assetDir)
+    console.log(paths.assetDir)
     return gulp.src([
-        config.assetDir + '/img/**/*'
+        paths.assetDir + '/img/**/*'
     ])
         .pipe(filterImgs)
         .pipe(imagemin({
@@ -20,7 +20,7 @@ gulp.task("images",()=>{
             use: [pngquant()]
         }))
         .pipe(filterImgs.restore)
-        .pipe(gulp.dest(config.serverPublicDir+ '/img/'))
+        .pipe(gulp.dest(paths.absolutePaths.serverPublicDir+ '/img/'))
         .pipe(size());
 });
 

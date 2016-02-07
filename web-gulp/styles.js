@@ -1,5 +1,5 @@
 import gulp from "gulp"
-import config from "./../config"
+import {paths} from "./../config"
 import filter from "gulp-filter"
 import size from "gulp-size"
 import sass from "gulp-sass"
@@ -12,11 +12,11 @@ gulp.task("styles",()=>{
     };
 
     const appStyles = gulp.src([
-        config.src + "**/*.{css,scss}",
-    ],{ base: config.src + "/app/" });
+        paths.absolutePaths.src + "**/*.{css,scss}",
+    ],{ base: paths.absolutePaths.src + "/app/" });
     const assetStyles = gulp.src([
-        config.assetDir+ "/css/" + "**/*.{css,scss}",
-    ],{ base: config.assetDir+ "/css/" })
+        paths.relativePaths.assetDir+ "/css/" + "**/*.{css,scss}",
+    ],{ base: paths.relativePaths.assetDir+ "/css/" })
 
     return merge(appStyles,assetStyles)
         .pipe(sassFilter)
@@ -24,7 +24,7 @@ gulp.task("styles",()=>{
             console.log.apply(null,arguments)
         }))
         .pipe(sassFilter.restore)
-        .pipe(gulp.dest(config.serverPublicDir + "/css/"))
+        .pipe(gulp.dest(paths.absolutePaths.serverPublicDir + "/css/"))
         .pipe(size())
 });
 

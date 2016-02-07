@@ -1,5 +1,5 @@
 import gulp from "gulp"
-import config from "./../config"
+import {paths} from "./../config"
 import filter from "gulp-filter"
 import size from "gulp-size"
 import replace from "gulp-replace"
@@ -9,7 +9,7 @@ import inject from "gulp-inject"
 gulp.task("inject",['styles', "scripts"],()=>{
 
     const injectStyles = gulp.src([
-        config.tempDir+ '**/**/*.css'
+        paths.absolutePaths.tempDir+ '**/**/*.css'
     ], { read: false });
 
 
@@ -24,14 +24,14 @@ gulp.task("inject",['styles', "scripts"],()=>{
     };
 
     return gulp.src([
-        config.src + "**/*.{html,hbs,tmpl}"
-    ],{ base: config.src })
+            paths.absolutePaths.src + "**/*.{html,hbs,tmpl}"
+    ],{ base: paths.absolutePaths.src })
         .pipe(inject(injectStyles, injectOptions))
         .pipe(stream(wiredepOptions))
         .pipe(replace("../../../bower_components/","/bower_components/"))
         .pipe(replace("node_modules/","/node_modules/"))
         .pipe(replace("/public/","public/"))
-        .pipe(replace(config.tempDir + "/" + config.serverDir,"/"))
-        .pipe(gulp.dest(config.tempDir))
+        .pipe(replace(paths.absolutePaths.tempDir + "/" + paths.relativePaths.serverDir,"/"))
+        .pipe(gulp.dest(paths.absolutePaths.tempDir))
 });
 

@@ -1,7 +1,7 @@
 'use strict';
 
 import gulp from "gulp"
-import config from "./../config"
+import {paths} from "./../config"
 import size from "gulp-size"
 import babel from "gulp-babel"
 
@@ -12,9 +12,9 @@ const babelOptions = {
 export function scripts (){
 
 
-    return gulp.src([ config.src + "**/*.{js,es6}"])
+    return gulp.src([ paths.absolutePaths.src + "**/*.{js,es6}"])
         .pipe(babel(babelOptions))
-        .pipe(gulp.dest(config.tempDir+ '/'))
+        .pipe(gulp.dest(paths.tempDir+ '/'))
         .pipe(size())
 
 }
