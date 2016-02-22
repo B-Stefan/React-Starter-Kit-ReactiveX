@@ -4,6 +4,7 @@
   "description": "A starterkit for React and ReactiveX build with gulp",
   "main": "index.js",
   "scripts": {
+    "start": "node ./web-build/server/Main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": " ./node_modules/.bin/gulp build",
     "bundle": " ./node_modules/.bin/gulp build",

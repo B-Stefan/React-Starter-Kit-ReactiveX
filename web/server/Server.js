@@ -8,7 +8,7 @@ export class Server {
 
     constructor() {
         this.config = {
-            PORT: 3000,
+            PORT: process.env.PORT || 3000,
             HOST: "localhost",
             PUBLIC_DIR: __dirname + "/public",
             PUBLIC_FONT_DIR: __dirname + "/public/fonts",
