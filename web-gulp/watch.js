@@ -8,18 +8,18 @@ import gCallback from "gulp-callback"
 
 
 gulp.task("watch", ["build"],()=>{
-    var path = ['.', paths.absolutePaths.tempDir, paths.relativePaths.serverDir, "Main.js"];
+    var path = [paths.absolutePaths.tempDir, paths.relativePaths.serverDir, "Main.js"];
 
     let server = gulpDevServer.listen({
      path: path.join("/")
     });
 
-    let srcPath =  ['.', paths.absolutePaths.src, "**/**/*.{js,ts,tsx}"].join("/").replace("//", "/");
+    let srcPath =  [paths.absolutePaths.src, "**/**/*.{js,ts,tsx}"].join("/").replace("//", "/");
 
     gulp.watch(srcPath,()=>{
         scripts()
         .pipe(gCallback(()=>{
-                gulp.start("bundle")
+                gulp.start("bundle");
                 server.restart((err)=>{
                     if(err){
                         server.kill();

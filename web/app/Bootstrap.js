@@ -2,7 +2,7 @@ import Routes from "./Routes"
 import * as React from "react"
 import * as ReactDom  from "react-dom"
 import {renderToString} from "react-dom/server"
-import {createMemoryHistory, createBrowserHistory} from "history"
+import {createMemoryHistory, createHistory} from "history"
 import Utils from "../server/utils/Utils";
 import Home from "./components/Home";
 
@@ -19,7 +19,7 @@ export default class Bootstrap {
     runOnBrowser() {
         console.log("INIT REACT ON BROWSER");
         return new Promise((resolve, reject)=> {
-                const history = createBrowserHistory();
+                const history = createHistory();
 
                 ReactDom.render(React.createElement(Routes, {history: history}), document.getElementById("root"));
             });

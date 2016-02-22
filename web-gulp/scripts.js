@@ -14,7 +14,7 @@ export function scripts (){
 
     return gulp.src([ paths.absolutePaths.src + "**/*.{js,es6}"])
         .pipe(babel(babelOptions))
-        .pipe(gulp.dest(paths.tempDir+ '/'))
+        .pipe(gulp.dest(paths.absolutePaths.tempDir+ '/'))
         .pipe(size())
 
 }

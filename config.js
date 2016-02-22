@@ -9,9 +9,9 @@ const gulpDir       = "gulp";
 const serverDir     = "server";
 const assetDir      = "assets";
 const layoutDir     = "layout";
-const src           = __dirname + basePrefix + "/";
+const src           = __dirname + "/" + basePrefix + "/";
 function buildFullName(name){
-    return basePrefix + "-" + name;
+    return __dirname + "/" + basePrefix + "-" + name;
 }
 export const paths = {
     absolutePaths: {
