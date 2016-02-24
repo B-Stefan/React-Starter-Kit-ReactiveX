@@ -1,7 +1,8 @@
 #React-Starter-Kit-Typescript
 
-This repository contains a prototype of a starter kit for react and typescript.
-The reson for this template is that I think the current starter kits have so many different default setups like testing, travis
+This repository contains a prototype of a starter kit for react.
+The reason for this template is that I think the current starter kits have so many different default setups like testing, travis that you need a simple clear template with a minimal function. 
+
 ## Getting started
 
 Requirements 
@@ -19,14 +20,14 @@ To use this starter kit follow the instructions:
 Other npm commands are: 
 
 ``` 
-  npm run [build | dev  | bundle | gulp | tsd | test]
+  npm run [build | dev  | bundle | gulp | test]
 
 ```
 
 
 ## Used technologies
 
-* React@0.14
+* React@0.14.x
 * Gulp
 * Bable / ES6
 
