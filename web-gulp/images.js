@@ -9,9 +9,9 @@ gulp.task("images",()=>{
 
     let filterImgs = filter('**/*{png,jpg}',{restore: true});
 
-    console.log(paths.assetDir)
+
     return gulp.src([
-        paths.assetDir + '/img/**/*'
+          paths.relativePaths.assetDir + '/img/**/*'
     ])
         .pipe(filterImgs)
         .pipe(imagemin({
